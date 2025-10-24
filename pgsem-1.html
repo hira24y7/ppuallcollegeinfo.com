@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Admission Portal</title>
+
 <style>
-  /* Reset-ish */
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -31,165 +31,174 @@
     font-weight: 700;
     letter-spacing: 0.4px;
   }
+  .topbar h4 {
+    font-size: 14px;
+    margin-top: 5px;
+  }
 
-  /* Main layout */
+  /* Layout */
   .wrap {
+    width: 100%;
     max-width: 1200px;
     margin: 18px auto;
     padding: 10px 18px 60px;
     display: flex;
     gap: 18px;
+    flex-wrap: wrap;
   }
 
   .column {
-    flex: 1 1 0;
+    flex: 1 1 50%;
     background: white;
     padding: 18px;
     min-height: 650px;
     position: relative;
   }
 
-  /* vertical center divider (looks like screenshot) */
   .left-col { border-right: 6px solid #777; }
-  /* panel title bar */
+  @media (max-width: 980px) {
+    .left-col { border-right: none; border-bottom: 6px solid #777; }
+  }
+
+  /* Panel Title (Blue Background Removed) */
   .panel-title {
     display: inline-block;
     width: 100%;
     padding: 8px 12px;
     text-align: center;
     font-weight: 700;
-    border-radius: 2px;
+    border-radius: 6px;
     margin-bottom: 18px;
     box-shadow: inset 0 -4px rgba(0,0,0,0.08);
-    color: #fff;
-  }
-  .panel-title.under {
-    background: linear-gradient(#21307b, #2b3aa0); /* deep blue */
-    text-decoration: underline;
-  }
-  .panel-title.post {
-    background: linear-gradient(#21307b, #2b3aa0);
+    color: #000;
+    background: #f7f7f7; /* light grey background */
+    border: 1px solid #ccc;
     text-decoration: underline;
   }
 
-  /* Buttons/links list */
+  /* Buttons */
   .list {
     margin-top: 18px;
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    padding-left: 40px; /* to match screenshot spacing */
+    gap: 14px;
+    align-items: center;
   }
 
- /* Base button style */
-a.btn-card {
-  display: inline-block;
-  padding: 14px 24px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: bold;
-  margin: 1px;
-  transition: background 0.3s ease, color 0.3s ease; /* hover smooth */
-  text-align: center;
-  color: white; /* default text color */
-}
-/* 🔹 Font-size Classes (independent from color) */
-a.fs15 { font-size: 15px; }
-a.fs20 { font-size: 20px; }
-a.fs25 { font-size: 25px; }
-a.fs30 { font-size: 30px; }
-/* Individual button colors */
-a.btn-card.red { background: #e74c3c; color: white; }
-a.btn-card.blue { background: #3498db; color: white; }
-a.btn-card.green { background: #2ecc71; color: white; }
-a.btn-card.yellow { background: #f1c40f; color: black; }
-
-/* Hover colors */
-a.btn-card.red:hover { background: #c0392b; color: white; }
-a.btn-card.blue:hover { background: #2980b9; color: white; }
-a.btn-card.green:hover { background: #27ae60; color: white; }
-a.btn-card.yellow:hover { background: #f39c12; color: black; }
-
-  /* left (Under Graduation) - red style */
-  .under .btn-card {
-    background: linear-gradient(#f15b5b, #d84343);
-    color: #fff;
-    border: 3px solid rgba(255,255,255,0.06);
-  }
-  .under .btn-card:hover { transform: translateY(-3px); box-shadow: 0 8px 10px rgba(216,67,67,0.12); }
-
-  /* right (Post Graduation) - blue style */
-  .post .btn-card {
-    background: linear-gradient(#2a9df4, #0b76ef);
-    color: #fff;
-    border: 3px solid rgba(255,255,255,0.06);
-  }
-  .post .btn-card:hover { transform: translateY(-3px); box-shadow: 0 8px 10px rgba(11,118,239,0.12); }
-
-  /* small badge/rounded edges like screenshot */
-  .btn-card { border-radius: 12px; }
-
-  /* align items inside each column */
-  .column-inner {
-    max-width: 620px;
-    margin: 0 auto;
+  a.btn-card {
+    display: block;
+    width: 90%;
+    max-width: 500px;
+    padding: 14px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    transition: all 0.3s ease;
   }
 
-  /* make the page responsive */
-  @media (max-width: 980px) {
-    .wrap { flex-direction: column; }
-    .left-col { border-right: 0; border-bottom: 6px solid #777; }
-    .list { padding-left: 0; gap: 14px; align-items: center; }
-    .btn-card { width: 84%; }
-    .column { min-height: 260px; padding: 14px; }
+  /* Font sizes */
+  a.fs15 { font-size: 15px; }
+  a.fs20 { font-size: 20px; }
+  a.fs25 { font-size: 25px; }
+  a.fs30 { font-size: 30px; }
+
+  /* Colors */
+  a.red { background: #e74c3c; }
+  a.red:hover { background: #c0392b; }
+
+  a.blue { background: #3498db; }
+  a.blue:hover { background: #2980b9; }
+
+  a.green { background: #2ecc71; }
+  a.green:hover { background: #27ae60; }
+
+  a.yellow { background: #f1c40f; color: #000; }
+  a.yellow:hover { background: #f39c12; color: #000; }
+
+  /* Hover effect */
+  .btn-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .wrap { flex-direction: column; padding: 10px; }
+    .column { min-height: auto; padding: 12px; }
+    .btn-card { font-size: 18px; width: 95%; }
     .topbar h1 { font-size: 20px; }
+    .topbar h4 { font-size: 12px; }
   }
+a.college-box {
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  font-size: 18px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+
+/* Sirf Government aur Affiliated boxes ke liye blue background */
+.government,
+.affiliated {
+  background-color: Yellow;
+  color: black;
+  font-size: 25px;
+  text-align: center;
+ font-weight: bold;
+}
 
 
 </style>
 </head>
-<body>
 
+<body>
   <header class="topbar">
-    <h1>Patliputra University College  Portal</h1>
-<h4> <marquee> यदि Box का रंग लाल है तो एडमिशन शुरू नहीं हुई हैं , यदि Box का रंग हरा हैं तो एडमिशन शुरू हो गई हैं | यदि box का रंग  yellow है तो एडमिशन date खत्म हो गई हैं | यदि box का रंग blue हैं तो एडमिशन offline यानि कॉलेज में होगी |  </marquee></h4>
+    <h1>Patliputra University College Portal</h1>
+    <h4>
+      <marquee>यदि Box का रंग लाल है तो एडमिशन शुरू नहीं हुई हैं, यदि Box का रंग हरा हैं तो एडमिशन शुरू हो गई हैं | यदि Box का रंग yellow है तो एडमिशन date खत्म हो गई हैं | यदि Box का रंग blue हैं तो एडमिशन offline यानि कॉलेज में होगी |</marquee>
+    </h4>
   </header>
 
-
-  <main class="wrap">
+ 
     <!-- LEFT -->
-    <section class="column left-col under">
-      <div class="column-inner">
-        <div class="panel-title under"> Government/Constituent College </div>
-
-        <div class="list">
-	<a class="btn-card red fs30" href="https://nalandacollege.ac.in/">Nalanda College,Biharsharif</a>
-<a class="btn-card red fs30" href="https://kisancollegeinter.com/" >Kisan College Sohsarai</a>
-<a class="btn-card red fs25" href="https://www.spmcudantpuri.ac.in/">S.P.M Colleg Udantpuri Biharsharif</a>
-<a class="btn-card red fs25" href="https://nalandamahilacollege.ac.in/">Nalanda Mahila College,Biharsharif</a>
-<a class="btn-card red fs25" href="https://www.sucollegehilsa.ac.in/">S.U College, Hilsa</a>
-
-
-         
-          
-        </div>
+    <section class="column left-col">
+      <div class="college-box government">Government/Constituent College</div>
+      <div class="list">
+        <a class="btn-card red fs30" href="https://nalandacollege.ac.in/">Nalanda College, Biharsharif</a>
+        <a class="btn-card red fs30" href="https://kisancollegeinter.com/">Kisan College, Sohsarai</a>
+        <a class="btn-card red fs25" href="https://www.spmcudantpuri.ac.in/">S.P.M College, Udantpuri</a>
+        <a class="btn-card red fs25" href="https://nalandamahilacollege.ac.in/">Nalanda Mahila College, Biharsharif</a>
+        <a class="btn-card red fs25" href="https://www.sucollegehilsa.ac.in/">S.U. College, Hilsa</a>
+        <a class="btn-card red fs25" href="https://www.gdcollegerajgir.ac.in/">Govt. Degree College, Rajgir</a>
       </div>
     </section>
 
     <!-- RIGHT -->
-    <section class="column post">
-      <div class="column-inner">
-        <div class="panel-title post">Affiliated/Private College</div>
-
-        <div class="list">
-
-
-
-
-        </div>
+    <section class="column">
+ <div class="college-box government">Affiliated/Private College</div>
+      <div class="list">
+        <a class="btn-card red fs25" href="https://oafportal.in/login">Nalanda Sodh Sansthan, Biharsharif</a>
+        <a class="btn-card red fs30" href="https://oafportal.in/login">P.M.S College, Pahadpura</a>
+        <a class="btn-card red fs25" href="https://oafportal.in/login">R.L.S.Y College, Biharsharif</a>
+        <a class="btn-card red fs15" href="https://oafportal.in/login">Deo Saran Women's Evening College, Biharsharif</a>
+        <a class="btn-card red fs20" href="https://mbhcollegepatuana.com/">Mahatma Budh Hiraman College, Patuana</a>
+        <a class="btn-card red fs30" href="https://vmcollegepawapuri.ac.in/">V.M College, Pawapuri</a>
+        <a class="btn-card red fs20" href="https://mahabodhimahavidyalaya.ac.in/">Mahabodhi Mahavidyalaya, Nalanda</a>
+        <a class="btn-card red fs25" href="https://oafportal.in/login">R. Lal College, Alinagar</a>
+        <a class="btn-card red fs30" href="https://nalandacollege.ac.in/">G.D.M College, Harnaut</a>
+        <a class="btn-card red fs30" href="https://oafportal.in/login">R.P.S College, Harnaut</a>
+        <a class="btn-card red fs25" href="https://oafportal.in/login">B.R Degree College, Deepnagar</a>
+        <a class="btn-card red fs25" href="https://oafportal.in/login">S.P Verma College, Rajakuan</a>
+        <a class="btn-card red fs25" href="https://oafportal.in/login">Mata Ashapuri College, Pawapuri</a>
+        <a class="btn-card red fs25" href="https://kstcollege.com/">K.S.T College, Salempur</a>
+        <a class="btn-card red fs25" href="https://www.spcollegehilsa.in/admission_portal.php">S.P College, Hilsa</a>
+        <a class="btn-card red fs20" href="https://drrrsmc.in/">Ram Raj Singh Mahila Mahavidyalaya, Chandi</a>
+        <a class="btn-card red fs20" href="https://online.lstgcollege.com/">L.S.T. Gramin Mahavidyalaya, Aungaridham</a>
       </div>
     </section>
   </main>
-
 </body>
 </html>
