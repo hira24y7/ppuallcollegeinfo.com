@@ -15,9 +15,16 @@
         }
 
         /* Header style */
-        .header {
+        .header-a {
             background-color: red; /* Red background */
             color: white; /* Text white color */
+            padding: 10px 0; /* Top-bottom padding 10px, left-right 0 */
+            font-size: 24px; /* Text size bada */
+            font-weight: bold; /* Bold text */
+        }
+.header-b {
+            background-color: white; /*background */
+            color: black; /* Text color */
             padding: 10px 0; /* Top-bottom padding 10px, left-right 0 */
             font-size: 24px; /* Text size bada */
             font-weight: bold; /* Bold text */
@@ -30,27 +37,27 @@
             font-weight: bold; /* Bold text */
         }
 .header2 {
-            background-color: #FF8C00; /*  background */
-            color: white; /* Text white color */
+            background-color:; /*  background */
+            color: black; /* Text  color */
             padding: 10px 0; /* Top-bottom padding 10px, left-right 0 */
 		text-align: left; 
-            font-size: 30px; /* Text size bada */
+            font-size: 25px; /* Text size bada */
             font-weight: bold; /* Bold text */
         }
 .header3 {
-            background-color: ; /*  background */
-            color: blue; /* Text white color */
+            background-color:; /*  background */
+            color: black; /* Text white color */
             padding: 10px 0; /* Top-bottom padding 10px, left-right 0 */
 		text-align: left; 
-            font-size: 30px; /* Text size bada */
+            font-size: 25px; /* Text size bada */
             font-weight: bold; /* Bold text */
         }
 .header4 {
-            background-color: darkgreen; /*  background */
-            color: white; /* Text white color */
+            background-color:; /*  background */
+            color: black; /* Text  color */
             padding: 10px 0; /* Top-bottom padding 10px, left-right 0 */
 		text-align: left; 
-            font-size: 30px; /* Text size bada */
+            font-size: 25px; /* Text size bada */
             font-weight: bold; /* Bold text */
         }
 
@@ -64,7 +71,7 @@
         .highlight {
             background-color: yellow; /* Yellow background */
             display: inline-block; /* Inline me block ke jaise */
-	    font-size: 25px; /* Text size */
+	    font-size: 20px; /* Text size */
             padding: 10px 20px; /* Andar ka padding */
             font-weight: bold; /* Bold text */
             margin-bottom: 30px; /* Neeche space */
@@ -84,13 +91,24 @@
 
         .btn-red { background-color: red; } /* Patna button red */
         .btn-blue { background-color: orangered; } /* Nalanda button dark blue */
+	.btn1 {
+            display: inline-block;
+            padding: 15px 40px; /* Button ke andar space */
+            margin: 10px; /* Button ke charo taraf space */
+            font-size: 20px; /* Text size */
+            color: white; /* Text color */
+		background-color: green;
+            text-decoration: none; /* Underline hata do */
+            border-radius: 100px; /* Corner thoda round */
+            cursor: pointer; /* Mouse pointer hand me aayega */
+        }
     </style>
 </head>
 <body>
 
-    <div class="header"> <marquee> Welcome ppuallcollegeinfo.com </marquee></div>
+    <div class="header-a"> Welcome ppuallcollegeinfo.com</div>
 
-    <p class="description"><h4> इस  website के  माध्यम से आप पाटलिपुत्र यूनिवर्सिटी के अंदर आने वाले सभी सरकारी (Govt.)एवं गैरसरकारी (private)कॉलेजों में होने वाले  UG/PG का  ऑनलाइन एडमिशन इस website के माध्यम से कर सकते हैं |</h4></p>
+    <div class ="header-b"> <marquee> इस  website के  माध्यम से आप पाटलिपुत्र यूनिवर्सिटी के अंदर आने वाले सभी सरकारी (Govt.) एवं गैरसरकारी (private)कॉलेजों में होने वाले  UG/PG का  ऑनलाइन एडमिशन इस website के माध्यम से कर सकते हैं |</marquee></div>
 
  <div class="header1"> Patliputra University,Patna<br>पाटलिपुत्र यूनिवर्सिटी,पटना </div>
 <br></br>
@@ -102,12 +120,25 @@
         <a href="nalanda.html"target="_blank" class="btn btn-blue">Nalanda</a>
     </div>
 <p> <marquee> Patna जिले का लिंक अभी work in progress में हैं - कृपया प्रतीक्षा करें - असुविधा के लिए खेद हैं | </marquee> </p>
-    <div class="header2"> Patliputra University,Patna offical website <a  href="https://ppup.ac.in/" > Click me </a></div>
-<div class="header3"> परीक्षा फॉर्म ऑनलाइन  UG Sem-V (2023-2027) & PG Sem-3 (2024-2026)<a  href="https://ppuponline.in/exam_form_search_student_semester.php" > Click me </a></div>
-<div class="header4"> Result Link <a  href="https://lu.indiaexaminfo.co.in/result_patliputra.aspx" > Click me </a></div>
+<table border ="10px" cellspacing="0" cellpadding ="0" width ="90%">
+<tr>
+<td><div class="header2">Patliputra University,Patna offical website</td> <td> <a href="https://ppup.ac.in/"target="_blank" class="btn1 red"> Click me</a></td> </div>
+</tr>
+<td><div class="header3">  परीक्षा फॉर्म ऑनलाइन  UG Sem-V (2023-2027) & PG Sem-3 (2024-2026) </td><td><a href="https://ppuponline.in/exam_form_search_student_semester.php""target="_blank" class="btn1 red"> Click me</a></td></div>
+</tr>
+<td><div class="header4">  Result Link </td><td> <a href="https://lu.indiaexaminfo.co.in/result_patliputra.aspx"target="_blank" class="btn1 red"> Click me</a> </td></div>
+</tr>
+</table>
 
 <p> <h4> Contact - 3in1store24y7@gmail.com </h4> </p>
 <img src="https://i.postimg.cc/sXWYrWdd/3in1storelogo.jpg" alt="3in1store" width="50">
+<br></br>
+<img src="https://i.postimg.cc/sDY3qD52/an-college.jpg" alt="3in1store" width="500">
+<img src="https://i.postimg.cc/PJmng2v5/college-of-commerce.jpg" alt="3in1store" width="500">
+<img src="https://i.postimg.cc/NG1hfCFn/Nalanda-College.jpg" alt="3in1store" width="500">
+<img src="https://i.postimg.cc/T33B0R02/rlsy-bakhtiyarpru.jpg" alt="3in1store" width="500">
+<img src="https://i.postimg.cc/Dw0YsxfL/gdc.jpg" alt="3in1store" width="500">
+<img src="https://i.postimg.cc/Ss6Zq5dZ/kisan-college.jpg" alt="3in1store" width="500">
 
 
 </body>
