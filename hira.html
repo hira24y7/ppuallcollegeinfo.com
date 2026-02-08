@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPU All College Admission</title>
+    <style>
+        /* Body ka style */
+        body {
+ font-family: Arial, sans-serif; /* Text ka font */
+            text-align: center; /* Sare text center me dikhaye */
+            background-color: #f5f5f5; /* Background color halka grey */
+            margin: 0; /* Default margin hata diya */
+            padding: 0;
+           }
+
+        /* Header style */
+        .header-a {
+            background-color: green; /* Red background */
+            color: white; /* Text white color */
+            padding: 10px 0; /* Top-bottom padding 5px, left-right 0 */
+            font-size: 24px; /* Text size bada */
+            font-weight: bold; /* Bold text */
+        }
+
+        /* Button style */
+.semester-btn {
+        display: inline-block;
+        margin: 20px;
+        padding: 15px 25px;
+        background-color: Orange;
+        color: black;
+        text-decoration: none;
+        border-radius: 18px;
+        transition: 0.3s;
+ 	font-size: 30px;
+font-weight: bold;
+    }
+       
+.semester-btn1 {
+        display: inline-block;
+        margin: 20px;
+        padding: 15px 25px;
+        background-color: Yellow;
+        color: black;
+        text-decoration: none;
+        border-radius: 18px;
+        transition: 0.3s;
+ 	font-size: 30px;
+font-weight: bold;
+    }
+.red-box {
+        display: inline-block;
+        padding: 20px 40px;
+        background-color: red;
+        color: white;
+        border-radius: 10px;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 40px;
+line-height: .5;
+
+    }
+.emoji{
+animation:blink 2s infinite;
+}
+@keyfranes blink {
+0%,50%,100% {opacity:1;}
+25%, 75% {opacity: 0;}
+}
+.h2{
+background-image: url("pro.png");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+background-color: rgba(0,0,0,0.8);
+background-blend-mode: darken;
+color: white;
+}
+.marquee-container {
+    width: 100%;
+    overflow: hidden; /* scroll ke bahar ke photos hide ho jayein */
+    background: #fff;
+    padding: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+  }
+
+  .marquee-track {
+    display: flex;
+    width: calc(200px * 15 * 2); /* photo width * number of photos * 2 for looping */
+    animation: marquee 20s linear infinite; /* speed adjust kar sakte hain */
+  }
+
+  .marquee-track img {
+    width: 150px;  /* image ka width */
+    height: 150px; /* image ka height */
+    margin-right: 150px;
+    object-fit: cover; /* photo ko stretch ke bina fit kare */
+    border-radius: 8px;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%); /* half width scroll kare */
+    }
+  }
+    </style>
+</head>
+<body>
+<img src="ppu.JPG" class ="img">
+<a href="BCA Syllabus.pdf"> <marquee><font color = "blue"> Download BCA Syllabus </font>  </marquee></a>
+<div class="h2">
+    <div class="header-a"> Welcome BCA Notes Website</div>
+<br></br>
+    <div class ="red-box"> Select Your Year <span class="emoji"> &#128071</span> </div>
+<h1 style="margin: 1px 0;"> Bachelor of Computer Application (BCA) </h1>
+    <a href="part1.html" class="semester-btn">Part 1</a>
+    <a href="ugsem-2.html" target="_blank" class="semester-btn">Part 2</a>
+    <a href="ugsem-3.html" target="_blank" class="semester-btn">Part 3</a>
+<h1 style="margin: 1px 0;"> BCA - PYQ (Previous Year Question) </h1>
+    <a href="part1.html" class="semester-btn1">Part 1</a>
+    <a href="ugsem-2.html" target="_blank" class="semester-btn1">Part 2</a>
+    <a href="ugsem-3.html" target="_blank" class="semester-btn1">Part 3</a>
+<h1 style="margin: 1px 0;"> BCA - Test Series </h1>
+    <a href="test.html" class="semester-btn2">Part 1</a>
+    <a href="ugsem-2.html" target="_blank" class="semester-btn2">Part 2</a>
+    <a href="ugsem-3.html" target="_blank" class="semester-btn2">Part 3</a>
+<div class ="header-b"> <marquee> HIRA KUMAR - Guest Teacher of BCA Dept. in S.P.M College, Udantpuri,Biharsharif</marquee></div>
+<div class ="header-b"> <marquee direction="left"scrollamount="10"> Designed -- Developed -- Deployed -- maintained -- By Hira Kumar</marquee></div>
+<div class="marquee-container">
+  <div class="marquee-track">
+    <!-- Images repeat karenge takki continuous effect aaye -->
+    <img src="1.jpg" alt="Photo1">
+    <img src="2.jpg" alt="Photo2">
+    <img src="3.png" alt="Photo3">
+    <img src="4.jpg" alt="Photo4">
+    <img src="5.jpg" alt="Photo5">
+    <img src="6.jpg" alt="Photo6">
+    <img src="7.jpg" alt="Photo7">
+   
+    
+    <!-- Repeat same images for continuous scrolling -->
+    <img src="1.jpg" alt="Photo1">
+    <img src="2.jpg" alt="Photo2">
+    <img src="3.png" alt="Photo3">
+    <img src="4.jpg" alt="Photo4">
+    <img src="5.jpg" alt="Photo5">
+ <img src="6.jpg" alt="Photo5">
+ <img src="7.jpg" alt="Photo5">
+
+  </div>
+</div>
+</body>
+</html>
